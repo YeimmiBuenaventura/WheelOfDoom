@@ -4,4 +4,81 @@
 }
 *{
     font-family: TrueType;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+body{
+    background-image: url(./imagenes/fondo-lista.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.img-absoluta{
+    position:absolute;
+    top: 0;
+    right: 0;
+}
+
+/*La de celular vertical: 320x480*/
+
+@media screen and (max-width: 320px) {
+    .img-absoluta{
+        width: 50%;
+        height: 50%;
+    }
+
+    .play{
+        background-color: #AF1212;
+        color: white;
+        border-radius: 30%;
+        width: 60px;
+        height: 30px;
+        text-align: center;
+    }
+    .titulo{
+        color: white;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .name-player {
+        width: 50%;
+        position: relative;
+    }
+
+    .name-player input{
+        background-color: transparent;
+        border: #AF1212 solid;
+        width: 100%;
+    }
+    .name-player i{
+        color: #AF1212;
+        position: absolute;
+        right: 7%;
+        top: 23%;
+    }
+
+    body{
+        margin-left: 10px;
+    }
+
+    .form-control{
+        background-color: transparent;
+        border: #AF1212 solid;
+        width: 90%;
+        height: 150px;
+        margin-bottom: 5px;
+    }
+    .play_override{
+        text-align: center;
+        margin-top: 30px;
+        
+    }
+    
+    .form-control{
+        text-align: center;
+    }
+    
+    … }
