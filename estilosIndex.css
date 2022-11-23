@@ -1,0 +1,7 @@
+@font-face {
+    font-family: TrueType;
+    src: url('fuente/Game-Of-Squids.ttf');
+}
+*{
+    font-family: TrueType;
+}
