@@ -1,0 +1,168 @@
+@font-face {
+    font-family: TrueType;
+    src: url('fuente/Game-Of-Squids.ttf');
+}
+*{
+    font-family: TrueType;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    background-image: url('./imagenes/fondo-rojo.jpeg');
+    overflow:visible;
+    width: 100vw;
+    height: 100vh;
+}
+body{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(autofill, minmax(160px, 1fr));
+    grid-template-columns: repeat(autofit, minmax(160px, 1fr));
+    grid-template-rows: repeat(3, auto);
+    grid-template-rows: repeat(autofill, minmax(160px, 1fr));
+    grid-template-rows: repeat(autofit, minmax(160px, 1fr));
+    height: 100vh;
+}
+.gameOver{
+    grid-area: 1 / 1 / 2 / 2;
+    font-size: 3.5rem;
+    justify-self: flex-end;
+    color: #fff;
+    align-self: flex-end;
+}
+.squid{
+    grid-area: 2 / 1 / 3 / 2;
+    width: 70%;
+    justify-self: flex-end;
+    padding-right: 5%;
+}
+.text{
+    grid-area: 3 / 1 / 4 / 2;
+    font-size: 1.8rem;
+    justify-self: flex-end;
+    padding-left: 25%;
+    text-align: center;
+    color: #fff;
+}
+.cook{
+    grid-area: 1 / 2 / 4 / 3;
+    width: 20%;
+    justify-self: center;
+    align-self: center;
+}
+.cook:hover{
+    scale: 150%;
+    cursor: pointer;
+}
+.reset{
+    grid-area: 1 / 2 / 4 / 3;
+    justify-self: center;
+    align-self: center;
+    font-size: 1.7rem;
+}
+@media (max-height: 480px) and (min-width: 320px){
+    body{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(autofill, minmax(320px, 1fr));
+        grid-template-columns: repeat(autofit, minmax(320px, 1fr));
+        grid-template-rows: repeat(4, auto);
+        grid-template-rows: repeat(autofill, minmax(160px, 1fr));
+        grid-template-rows: repeat(autofit, minmax(160px, 1fr));
+        height: 100vh;
+    }
+    .gameOver{
+        grid-area: 1 / 1 / 2 / 2;
+        font-size: 2.5rem;
+        justify-self: center;
+        color: #fff;
+        align-self: center;
+    }
+    .squid{
+        grid-area: 2 / 1 / 3 / 2;
+        width: 80%;
+        justify-self: center;
+        padding-right: 5%;
+    }
+    .text{
+        grid-area: 3 / 1 / 4 / 2;
+        font-size: 1.3rem;
+        justify-self: center;
+        text-align: center;
+        color: #fff;
+        padding: 0;
+    }
+    .cook{ 
+        grid-area: 4 / 1 / 5 / 2;
+        background-image: url('./imagenes/reset.png');
+        background-size: 100px 100px;
+        width: 100px;
+        height: 100px;
+        justify-self: center;
+    }
+    .cook:hover{
+        scale: 150%;
+        cursor: pointer;
+    }
+    .reset{
+        grid-area: 4 / 1 / 5 / 2;
+        justify-self: center;
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    .reset:hover{
+        scale: 150%;
+    }
+}
+@media (min-width: 480px) and (min-height: 320px){
+    body{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(autofill, minmax(160px, 1fr));
+        grid-template-columns: repeat(autofit, minmax(160px, 1fr));
+        grid-template-rows: repeat(3, auto);
+        grid-template-rows: repeat(autofill, minmax(160px, 1fr));
+        grid-template-rows: repeat(autofit, minmax(160px, 1fr));
+        height: 100vh;
+    }
+    .gameOver{
+        grid-area: 1 / 1 / 2 / 2;
+        font-size: 2rem;
+        justify-self: center;
+        color: #fff;
+        align-self: flex-end;
+        padding-top: 20%;
+    }
+    .squid{
+        grid-area: 1 / 2 / 3 / 3;
+        width: 90%;
+        justify-self: center;
+        align-self: flex-end;
+
+    }
+    .text{
+        grid-area: 3 / 2 / 4 / 3;
+        font-size: 1rem;
+        justify-self: flex-end;
+        text-align: center;
+        color: #fff;
+        padding: 0;
+    }
+    .cook{
+        grid-area: 2 / 1 / 4 / 2;
+        width: 30%;
+        justify-self: center;
+        align-self: center;
+    }
+    .cook:hover{
+        scale: 150%;
+        cursor: pointer;
+    }
+    .reset{
+        grid-area: 2 / 1 / 4 / 2;
+        justify-self: center;
+        align-self: center;
+        font-size: 0.8rem;
+    }
+}
