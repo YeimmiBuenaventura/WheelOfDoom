@@ -14,71 +14,104 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    overflow: hidden;
+    margin-left: 10px;
 }
 .img-absoluta{
     position:absolute;
     top: 0;
     right: 0;
+    width: 50%;
+    height: 50%;
+    -webkit-animation: circle 6s infinite linear;
+    animation: circle 6s infinite linear;
 }
 
-/*La de celular vertical: 320x480*/
-
-@media screen and (max-width: 320px) {
-    .img-absoluta{
-        width: 50%;
-        height: 50%;
+@-webkit-keyframes circle{
+    0%{
+        transform: rotate(0deg); transform-origin: top;
     }
-
-    .play{
-        background-color: #AF1212;
-        color: white;
-        border-radius: 30%;
-        width: 60px;
-        height: 30px;
-        text-align: center;
+    25%{
+        transform: rotate(20deg); transform-origin: top;
     }
+    50%{
+        transform: rotate(0deg);transform-origin: top;
+    }
+    75%{
+        transform: rotate(-20deg); transform-origin: top;
+    }
+    100%{
+        transform:rotate(0deg);transform-origin: top;
+    }
+}
+.play{
+    background-color: #AF1212;
+    color: white;
+    border-radius: 30%;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+}
+.titulo{
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.name-player {
+    width: 50%;
+    position: relative;
+}
+
+.name-player input{
+    background-color: transparent;
+    border: #AF1212 solid;
+    width: 100%;
+}
+.name-player i{
+    color: #AF1212;
+    position: absolute;
+    right: 7%;
+    top: 23%;
+}
+
+.form-control{
+    background-color: transparent;
+    border: #AF1212 solid;
+    width: 90%;
+    height: 150px;
+    margin-bottom: 5px;
+    text-align: center
+}
+.play_override{
+    text-align: center;
+    margin-top: 30px;
+}
+    
+
+@media screen and (max-width: 480px) and (orientation:landscape) {
     .titulo{
-        color: white;
-        font-size: 16px;
-        margin-bottom: 20px;
+        margin-top: 20%;
     }
-
-    .name-player {
-        width: 50%;
-        position: relative;
-    }
-
     .name-player input{
-        background-color: transparent;
-        border: #AF1212 solid;
-        width: 100%;
+        width: 85%;
     }
     .name-player i{
-        color: #AF1212;
-        position: absolute;
-        right: 7%;
-        top: 23%;
+        right: 19%;
+        top: 4%
     }
-
-    body{
-        margin-left: 10px;
+    label{
+        display: flex;
     }
-
-    .form-control{
-        background-color: transparent;
-        border: #AF1212 solid;
-        width: 90%;
-        height: 150px;
-        margin-bottom: 5px;
+    .list-player{
+        margin-right:25%;
+    }
+    
+    .img-absoluta{
+        width: 30%;
     }
     .play_override{
-        text-align: center;
-        margin-top: 30px;
+        display: flex;
         
     }
-    
-    .form-control{
-        text-align: center;
-    }
-    
-    … }
+}
