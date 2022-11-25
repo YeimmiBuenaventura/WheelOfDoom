@@ -91,13 +91,16 @@ body{
 
 @media screen and (max-width: 480px) and (orientation:landscape) {
     .titulo{
-        margin-top: 20%;
+        margin-top: 5%;
+        margin-right: 20%;
+        text-align: center;
     }
     .name-player input{
         width: 85%;
+        margin-left: 5%;
     }
     .name-player i{
-        right: 19%;
+        right: 16%;
         top: 4%
     }
     label{
@@ -108,10 +111,13 @@ body{
     }
     
     .img-absoluta{
-        width: 30%;
+        width: 25%;
+        height: 60%;
     }
     .play_override{
         display: flex;
+        justify-content: center;
+        margin-top:-5px;
         
     }
 }
