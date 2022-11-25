@@ -17,24 +17,28 @@
         <label for="nombre">
             <div class="name-player">
                 <input type="text" id="letra-2" placeholder="PLAYER'S NAME" required="required">
-                <i class="fa-solid fa-square-plus"></i>
+                <i class="fa-solid fa-square-plus" id="add"></i>
             </div>
             <br>
             <br>
             <br>
             <br>
             <br>
-            <div class="list-player">
-                <textarea name="message" id="message" class="form-control" rows="4" cols="25" required="required"
-                placeholder="PLAYER LIST"></textarea>
-            </div>
         </label>
-        <div class="play_override">
-            <button class="play">PLAY</button>
-        </div>
     </form>
+    <div class="container_list">
+        <h3 class="title_list">Player List</h3>
+        <div class="container_players">
+          <ul class="list_of_players" id="listOfPlayers">
+          </ul>
+        </div>
+      </div>
+    <div class="play_override">
+        <button class="play">PLAY</button>
+    </div>
     <div>
         <img  class="img-absoluta" src="./imagenes/balanceo-remove.png" alt=" balanceo">
     </div>
+    <script src="funcionalidad.js"></script>
 </body>
 </html>
