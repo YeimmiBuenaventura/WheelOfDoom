@@ -98,6 +98,7 @@
 
 .btnShoot {
     position: absolute;
+    cursor: pointer;
     top:430px;
     left: 220px;
     border-radius: 18px;
@@ -111,7 +112,7 @@
     background-position: 0%;
 }
 
-.btnStart:hover {
+.btnShoot:hover {
     background-position: 100%;
     color: #AF1212;
 }
