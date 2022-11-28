@@ -84,6 +84,9 @@
     width: 200px;
     height: 190px ;
 }
+.imgKillerHoriz{
+    display: none;
+}
 /* ---CANVAS VICTIMA-- */
 #jugador{
 }
@@ -125,3 +128,186 @@
     background-position: 100%;
     color: #AF1212;
 }
+
+/* ----------MEDIA QUERIES ------------- */
+
+/* -----------MEDIA QUERIE CELULAR LANDSCAPE */
+@media screen and (max-width:480px) and (orientation:landscape){
+    body{
+        overflow: hidden;
+    }
+    .juegoNombre{
+        padding-top: 25px;
+        padding-right: 70px;
+    }
+    .juegoImgLogo{
+        display: block;
+        margin: auto;
+        width: 20rem;
+        position: absolute;
+        top:65px;
+        left: 105px;
+        z-index:0;
+    }
+    .imgVictima{
+        position: absolute;
+        top:35px;
+        left: 300px;
+        z-index:1;
+        width: 180px;
+        height: 180px ;
+    }
+    .imgKiller{
+        display:none;
+    }
+    .imgKillerHoriz{
+        display: flex;
+        position: absolute;
+        top:85px;
+        left:0;
+        width:260px;
+        height:280px ;
+    }
+    .btnShoot {
+        position: absolute;
+        padding: 0.2rem 2.2rem;
+        top:260px;
+        left: 230px;
+    }
+}
+/* --------MEDIA QUERIE TABLET 481x768 ------------ */
+@media screen and (min-width:481px) and (max-width:768px) {
+   body{
+    overflow: hidden;
+   }
+    .juegoNombre{
+        font-size: 6rem;
+        padding-top: 12rem;
+    }
+    .juegoImgLogo{
+        display: block;
+        width: 45rem;
+        position: absolute;
+        top:17rem;
+        left: 12rem;
+        z-index:0;
+    }
+    .imgVictima{
+        position: absolute;
+        top: 35rem;
+        left: 35rem;
+        z-index:1;
+        width: 480px;
+        height: 460px ;
+    }
+    .imgKiller{
+        display:none;
+    }
+    .imgKillerHoriz{
+        display: flex;
+        position: absolute;
+        top:55rem;
+        left:-2rem;
+        width:510px;
+        height:580px ;
+    }
+    .btnShoot {
+        padding: 2rem 4rem;
+        font-size: 2.3rem;
+        border-radius: 5rem;
+        position: absolute;
+        top:90rem;
+        left: 45rem;
+    }
+}
+/* --------MEDIA QUERIE TABLET 768 x 481 LANDSCAPE------------ */
+@media screen and (min-width:768px) and (orientation:landscape) {
+    body{
+     overflow: hidden;
+    }
+     .juegoNombre{
+         font-size: 6rem;
+         padding-top: 6rem;
+     }
+     .juegoImgLogo{
+         display: block;
+         width: 45rem;
+         position: absolute;
+         top:12rem;
+         left: 25rem;
+         z-index:0;
+     }
+     .imgVictima{
+         position: absolute;
+         top: 18rem;
+         left: 55rem;
+         z-index:1;
+         width: 480px;
+         height: 460px ;
+     }
+     .imgKiller{
+         display:none;
+     }
+     .imgKillerHoriz{
+         display: flex;
+         position: absolute;
+         top:29rem;
+         left:-2rem;
+         width:510px;
+         height:580px ;
+     }
+     .btnShoot {
+         padding: 2rem 4rem;
+         font-size: 2.3rem;
+         border-radius: 5rem;
+         position: absolute;
+         top:65rem;
+         left: 45rem;
+     }
+ }
+
+/* --------MEDIA QUERIE COMPU------------ */
+@media screen and (min-width:1024px) {
+    body{
+     overflow: hidden;
+    }
+     .juegoNombre{
+         font-size: 10rem;
+         padding-top: 6rem;
+     }
+     .juegoImgLogo{
+         display: block;
+         width: 45rem;
+         position: absolute;
+         top:18rem;
+         left: 28rem;
+         z-index:0;
+     }
+     .imgVictima{
+         position: absolute;
+         top: 20rem;
+         left: 75rem;
+         z-index:1;
+         width: 560px;
+         height: 540px ;
+     }
+     .imgKiller{
+         display:none;
+     }
+     .imgKillerHoriz{
+         display: flex;
+         position: absolute;
+         top:32rem;
+         left:-2rem;
+         width:550px;
+         height:620px ;
+     }
+     .btnShoot {
+         padding: 2rem 4rem;
+         font-size: 3rem;
+         border-radius: 5rem;
+         position: absolute;
+         top:67rem;
+         left: 45rem;
+     }
+ }
