@@ -1,8 +1,9 @@
 let namePlayer = document.querySelector('.name-player');
 let listPlayer = document.querySelector('.list-player');
-let playOverride= document.querySelector('play_override');
+let playOverride= document.querySelector('.play_override');
 let add = document.getElementById('add');
 let players = [];
+
 
 const deleteButtonHandler = (e) => {
   let idToDelete = e.target.id;
@@ -14,12 +15,11 @@ const deleteButtonHandler = (e) => {
 
 add.addEventListener("click", (e) => {
     e.preventDefault();
-    let namePlayer = document.querySelector('.name-player');
-    
+    let player = document.getElementById('letra-2')
     let idNewPlayer = players.length;
   
-    let nameNewPlayer = namePlayer.value;
-    if (namePlayer.value == "") {
+    let nameNewPlayer = player.value;
+    if (player.value == "") {
       alert("please enter a valid name");
     } else {
       players.push({
@@ -28,7 +28,7 @@ add.addEventListener("click", (e) => {
         isDead: false,
       });
     }
-    namePlayer.value = "";
+    player.value = "";
     soundAddPlayer.play()
     render();
     guardarEnStorage(players);
