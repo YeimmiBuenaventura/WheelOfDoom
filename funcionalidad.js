@@ -24,9 +24,10 @@ add.addEventListener("click", (e) => {
         playerName: nameNewPlayer,
         isDead: false,
       });
+      console.log(players);
     }
     player.value = "";
-    soundAddPlayer.play()
+    //soundAddPlayer.play()
     render();
     guardarEnStorage(players);
   });
@@ -40,10 +41,10 @@ add.addEventListener("click", (e) => {
   
     players.forEach(
       (player) =>
-        (htmlPlayers += `<li class="item_list_player" >
+        {htmlPlayers += `<li class="item_list_player" >
             <p class="player_name">${player.playerName}</p>
             <i class="bi bi-trash-fill player_delete"id="${player.id}"></i>
-            </li>`)
+            </li>`}
     );
     listPlayers.innerHTML = htmlPlayers;
     addDeleteButton();
