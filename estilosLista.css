@@ -21,8 +21,8 @@ body{
     position:absolute;
     top: 0;
     right: 0;
-    width: 50%;
-    height: 50%;
+    width: 40%;
+    height: 40%;
     -webkit-animation: circle 6s infinite linear;
     animation: circle 6s infinite linear;
 }
@@ -67,6 +67,7 @@ body{
     background-color: transparent;
     border: #AF1212 solid;
     width: 100%;
+    color: white;
 }
 .name-player i{
     color: #AF1212;
@@ -83,11 +84,13 @@ body{
     justify-content: space-evenly;
     color: white;
     background-color: transparent;
-    border: 2px solid red;
+    border: 2px solid #AF1212;
     border-radius: 5px;
     backdrop-filter: blur(1px);
     box-shadow: 0vh 5px 5px rgba(0, 0, 0, 0.329);
+    margin: auto;
   }
+  
   .container_players {
     display: flex;
     background-color: rgba(255, 255, 255, 0.911);
