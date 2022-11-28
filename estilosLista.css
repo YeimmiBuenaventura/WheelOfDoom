@@ -89,9 +89,8 @@ body{
     backdrop-filter: blur(1px);
     box-shadow: 0vh 5px 5px rgba(0, 0, 0, 0.329);
     margin: auto;
-  }
-  
-  .container_players {
+}  
+.container_players {
     display: flex;
     background-color: transparent;
     height: 70%;
@@ -100,36 +99,33 @@ body{
     border-radius: 5px;
     color: #333;
     overflow-y: scroll;
-  }
-  
-  .list_of_players {
+}
+.list_of_players {
     width: 90%;
-  }
-  .item_list_player {
+}
+.item_list_player {
     margin: 2vh 0;
     position: relative;
     width: 100%;
     display: flex;
     justify-content: space-between;
     color: white;
-  }
-  
-  .player_delete {
+}
+.player_delete {
     cursor: pointer;
     transition: 0.3s;
-  }
-  .player_delete:hover {
+}
+.player_delete:hover {
     transition: 0.3s;
     transform: scale(1.2);
-  }
-  
-  .player_name {
+}
+.player_name {
     width: 85%;
     position: relative;
     padding-bottom: 0.9vh;
     letter-spacing: 2px;
-  }
-  .player_name::after {
+}
+.player_name::after {
     content: "";
     width: 100%;
     height: 1px;
@@ -137,7 +133,7 @@ body{
     background-color: #333;
     position: absolute;
     bottom: 0;
-  }
+}
 .form-control{
     background-color: transparent;
     border: #AF1212 solid;

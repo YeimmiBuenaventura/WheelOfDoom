@@ -1,3 +1,7 @@
+//JULI
+let namePlayer = document.querySelector('letra-2'); //Se crea una variable namePlayer 
+let listPlayer = document.querySelector('.list-player');
+let playOverride= document.querySelector('.play_override');
 let add = document.getElementById('add');
 let players = [];
 
@@ -8,7 +12,6 @@ const deleteButtonHandler = (e) => {
   guardarEnStorage(players);
   render();
 };
-
 
 add.addEventListener("click", (e) => {
     e.preventDefault();
@@ -26,8 +29,11 @@ add.addEventListener("click", (e) => {
       });
       console.log(players);
     }
+    const audio = document.createElement("audio");
+    audio.preload = "auto";
+    audio.src= "sonidos/lobby-sound.wav"
     player.value = "";
-    //soundAddPlayer.play()
+    audio.play()
     render();
     guardarEnStorage(players);
   });
@@ -35,8 +41,6 @@ add.addEventListener("click", (e) => {
   // doom
   const render = () => {
     let htmlPlayers = ``;
-  
-  
     let listPlayers = document.getElementById("listOfPlayers");
   
     players.forEach(
