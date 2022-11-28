@@ -153,7 +153,6 @@ body{
 
 @media screen and (max-width: 480px) and (orientation:landscape) {
     .titulo{
-        margin-top: 5%;
         margin-right: 20%;
         text-align: center;
     }
@@ -163,13 +162,13 @@ body{
     }
     .name-player i{
         right: 16%;
-        top: 4%
+        top: 8%
     }
     label{
         display: flex;
     }
     .list-player{
-        margin-right:25%;
+        margin-right:15%;
     }
     
     .img-absoluta{
@@ -181,5 +180,13 @@ body{
         justify-content: center;
         margin-top:-5px;
         
+    }
+    .img-absoluta{
+        width: 40%;
+        height: 40%;
+}
+    .container_list {
+        margin-bottom: 5%;
+        border: #AF1212 solid;
     }
 }
