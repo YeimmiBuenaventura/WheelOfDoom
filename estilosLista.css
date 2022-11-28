@@ -188,3 +188,7 @@ body{
         border: #AF1212 solid;
     }
 }
+
+@media screen and (max-width: 768px){
+    
+}
