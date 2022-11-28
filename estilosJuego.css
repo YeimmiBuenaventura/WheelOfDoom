@@ -10,14 +10,6 @@
     box-sizing: border-box;
 }
 /* -----------KEYFRAMES------------ */
-@keyframes color{
-    0% {background-color: green;}
-    20%{background-color: blue;}
-    40%{background-color:rgb(197, 20, 111);}
-    50%{background-color:purple;}
-    80%{background-color:rgb(212, 227, 42);}
-    100%{background-color:rgb(177, 29, 10);}
-}
 @keyframes victim{
     10% {background-image: url(/imagenes/ilustraciones/victim/1.png);}
     30%{background-image: url(/imagenes/ilustraciones/victim/2.png);}
@@ -53,12 +45,8 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    /* animation-name: victim;
-    animation-delay: 0s;
-    animation-duration: 30s;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in; */
 }
+    
 .juegoNombre{
     color: #ffffff;
     font-size: 3rem;
@@ -87,6 +75,7 @@
 .imgKillerHoriz{
     display: none;
 }
+
 /* ---CANVAS VICTIMA-- */
 #jugador{
 }
@@ -105,9 +94,7 @@
 
 }
 
-
 /* ----BOTON DISPARAR */
-
 
 .btnShoot {
     position: absolute;
@@ -132,7 +119,7 @@
 /* ----------MEDIA QUERIES ------------- */
 
 /* -----------MEDIA QUERIE CELULAR LANDSCAPE */
-@media screen and (max-width:480px) and (orientation:landscape){
+@media (min-width:480px) and (orientation:landscape){
     body{
         overflow: hidden;
     }
@@ -176,7 +163,7 @@
     }
 }
 /* --------MEDIA QUERIE TABLET 481x768 ------------ */
-@media screen and (min-width:481px) and (max-width:768px) {
+@media  (min-width:481px) and (max-width:768px) {
    body{
     overflow: hidden;
    }
@@ -212,7 +199,7 @@
         height:580px ;
     }
     .btnShoot {
-        padding: 2rem 4rem;
+        padding: 1.2rem 4rem;
         font-size: 2.3rem;
         border-radius: 5rem;
         position: absolute;
@@ -221,7 +208,7 @@
     }
 }
 /* --------MEDIA QUERIE TABLET 768 x 481 LANDSCAPE------------ */
-@media screen and (min-width:768px) and (orientation:landscape) {
+@media (min-width:768px) and (orientation:landscape) {
     body{
      overflow: hidden;
     }
@@ -240,7 +227,7 @@
      .imgVictima{
          position: absolute;
          top: 18rem;
-         left: 55rem;
+         left: 61rem;
          z-index:1;
          width: 480px;
          height: 460px ;
@@ -267,7 +254,7 @@
  }
 
 /* --------MEDIA QUERIE COMPU------------ */
-@media screen and (min-width:1024px) {
+@media only (max-width:1024px)  and (orientation:landscape){
     body{
      overflow: hidden;
     }
@@ -286,7 +273,7 @@
      .imgVictima{
          position: absolute;
          top: 20rem;
-         left: 75rem;
+         left: 85rem;
          z-index:1;
          width: 560px;
          height: 540px ;
@@ -310,4 +297,4 @@
          top:67rem;
          left: 45rem;
      }
- }
+} 
