@@ -1,3 +1,6 @@
+//En este script se aplica las funcionalidades de las 4 vistas principales del juego, divididas en, Inicio del Juego, Lista de Jugadores, Game y Gameover.
+
+// Se declaran las variables de la vista de Lista de jugadores traidas con su respectiva clase de lista.html, de esta forma se declaran 3 variables principales para darle funcionalidad a esta vista
 let add = document.getElementById('add');//Se llama el id add del html para ponerle funcionalidad al icono de agregar
 let player2 = document.getElementById('letra-2')//Se llama el id del input en html para poder agregarle la funcionalidad correspondiente
 let players = [];//Se declara un array donde se guardaran los jugadores que se introduzcan
