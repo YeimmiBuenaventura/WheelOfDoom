@@ -138,30 +138,38 @@ body{
     
 
 @media screen and (max-width: 480px) and (orientation:landscape) {
+    .contenido{
+        display: flex;
+    }
     .titulo{
         margin-top: 5%;
         margin-right: 20%;
         text-align: center;
     }
     .namePlayer input{
-        width: 85%;
-        margin-left: 5%;
+        width: 140%;
+        margin-left: 0%;
     }
     .namePlayer i{
-        right: 16%;
-        top: 4%
-    }
-    label{
-        display: flex;
+        left: 122%;
     }
     .img-absoluta{
         width: 25%;
         height: 60%;
     }
+    .boxList {
+        margin-left: -30px;
+        width: 150%;
+    }
     .playOverride{
         display: flex;
         justify-content: center;
-        margin-top:-5px;
         
     }
+}
+@media screen and (min-width: 1020px){
+    .titulo{
+        font-size: 2rem;
+    }
+    
 }
