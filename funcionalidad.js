@@ -1,5 +1,7 @@
-//JULI
-let namePlayer = document.querySelector('letra-2'); //Se crea una variable namePlayer 
+//En este script se aplica las funcionalidades de las 4 vistas principales del juego, divididas en, Inicio del Juego, Lista de Jugadores, Game y Gameover.
+
+// Se declaran las variables de la vista de Lista de jugadores traidas con su respectiva clase de lista.html, de esta forma se declaran 5 variables principales para darle funcionalidad a esta vista 
+let namePlayer = document.querySelector('letra-2'); // 
 let listPlayer = document.querySelector('.list-player');
 let playOverride= document.querySelector('.play_override');
 let add = document.getElementById('add');
