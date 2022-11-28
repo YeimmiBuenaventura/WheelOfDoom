@@ -5,9 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilosLista.css">
-    <title>whoAreYou</title>
+    <title>listOfPlayers</title>
+    <script src="https://kit.fontawesome.com/074409b7ce.js" crossorigin="anonymous"></script>
+    <meta name="author" content="robnei" /> <meta name="copyright" content="Squid Game" /> 
 </head>
 <body>
+    <br>
+    <h1 class="titulo">ADD VICTIMS</h1>
     
+    <form action="">
+        <label for="nombre">
+            <div class="name-player">
+                <input type="text" id="letra-2" placeholder="PLAYER'S NAME" required="required">
+                <i class="fa-solid fa-square-plus" id="add"></i>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </label>
+    </form>
+    <div class="container_list">
+        <h3 class="title_list">Player List</h3>
+        <div class="container_players">
+            <ul class="list_of_players" id="listOfPlayers">
+            </ul>
+        </div>
+    </div>
+    <div class="play_override">
+        <button class="play">PLAY</button>
+    </div>
+    <div>
+        <img  class="img-absoluta" src="./imagenes/balanceo-remove.png" alt=" balanceo">
+    </div>
+    <script src="funcionalidad.js"></script>
 </body>
 </html>
