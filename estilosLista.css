@@ -97,7 +97,7 @@ body{
     justify-content: center;
     width: 90%;
     border-radius: 5px;
-    color: #333;
+    color: white;
     overflow-y: scroll;
 }
 .list_of_players {

@@ -15,11 +15,11 @@ const deleteButtonHandler = (e) => {
 
 add.addEventListener("click", (e) => {
     e.preventDefault();
-    let player = document.getElementById('letra-2')
+    let player2 = document.getElementById('letra-2')
     let idNewPlayer = players.length;
   
-    let nameNewPlayer = player.value;
-    if (player.value == "") {
+    let nameNewPlayer = player2.value;
+    if (player2.value == "") {
       Swal.fire({ title: 'Please write a name', background:"#AF1212", color:"white", confirmButtonColor:"black", showClass: { popup: 'animate__animated animate__fadeInDown' }, hideClass: { popup: 'animate__animated animate__fadeOutUp' } }) 
     } else {
       players.push({
@@ -36,7 +36,7 @@ add.addEventListener("click", (e) => {
     audio.play()
     render();
     guardarEnStorage(players);
-  });
+});
   
   // doom
   const render = () => {
