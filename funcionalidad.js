@@ -1,52 +1,15 @@
-var contexto;
-var imagenes = [];
-var pos = 0;
-
-function iniciar (){
-    var canvas = document.getElementById("lienzo")
-    canvas.width = 1200;
-    canvas.height = 1500;
-
-    contexto = canvas.getContext("2d");
-
-    for(i=0; i < 6; ++i)
-    {
-        imagenes [i] = new Image();
-        imagenes [i].src = "imagenes/muñeco/"+(i+1) +".png";
-    }
-
-    setInterval(animar, 300 );
-}
-
-function animar(){
-    contexto.drawImage(imagenes[pos], 0, 0);
-    ++pos; if(pos == 6) pos = 0;
-}
-
-//JULI
-let namePlayer = document.querySelector('letra-2'); //Se crea una variable namePlayer 
-let listPlayer = document.querySelector('.list-player');
-let playOverride= document.querySelector('.play_override');
 let add = document.getElementById('add');
+let player2 = document.getElementById('letra-2')
 let players = [];
-
-
-const deleteButtonHandler = (e) => {
-  let idToDelete = e.target.id;
-  players = players.filter((player) => player.id != idToDelete);
-  guardarEnStorage(players);
-  render();
-};
 
 
 add.addEventListener("click", (e) => {
     e.preventDefault();
-    let player = document.getElementById('letra-2')
     let idNewPlayer = players.length;
   
-    let nameNewPlayer = player.value;
-    if (player.value == "") {
-      alert("please enter a valid name");
+    let nameNewPlayer = player2.value;
+    if (player2.value == "") {
+      Swal.fire({ title: 'Please write a name', background:"#AF1212", color:"white", confirmButtonColor:"black", showClass: { popup: 'animate__animated animate__fadeInDown' }, hideClass: { popup: 'animate__animated animate__fadeOutUp' } }) 
     } else {
       players.push({
         id: idNewPlayer,
@@ -57,43 +20,47 @@ add.addEventListener("click", (e) => {
     const audio = document.createElement("audio");
     audio.preload = "auto";
     audio.src= "sonidos/lobby-sound.wav"
-    player.value = "";
+    player2.value = "";
     audio.play()
     render();
     guardarEnStorage(players);
-  });
+});
   
-  // doom
-  const render = () => {
-    let htmlPlayers = ``;
+const render = () => {
+  let htmlPlayers = ``;
+   
+  let list = document.getElementById("list");
   
+  players.forEach(
+    (player) =>
+      (htmlPlayers += `<li class="itemList" >
+        <p class="playersName">${player.playerName}</p>
+        <i class="bi bi-trash3-fill delete"id="${player.id}"></i>
+        </li>`)
+  );
+  list.innerHTML = htmlPlayers;
+  addDeleteButton();
+};
+
+//Se crea una constante para agregar el boton Delete  
+const addDeleteButton = (e) => {
+  let deletePlayer = document.querySelectorAll(".delete"); //Se crea una variable a la cual se le adjudica la clase delete, que aunque no este llamada en el html se crea en la const render, corresponde al icono  
+  deletePlayer.forEach((deleteButton) => //Se crea un ciclo foreach para indicarle al sistema que adjudique un icono delete por cada jugador
+    deleteButton.addEventListener("click", deletePlayerButton) //Indicamos que escuche el evento y al hacer click ejecute la función deletePlayerButton.
+  );
+};
+//Se crea una constante para eliminar el jugador de la lista si es requerido
+const deletePlayerButton = (e) => {
+  let idToDelete = e.target.id; //Se crea una variable que corresponde al evento "Click" que se realice al id, en este caso el icono Delete
+  players = players.filter((player) => player.id != idToDelete); //Players sera igual a la busqueda en el array; en la cual se comprobara que el player.id sea diferente al idToDelete
+  guardarEnStorage(players); //Ejecutamos la función guardarEnStorage que recibe un objeto en este caso players
+  render(); //Metodo utilizado para renderizar la web luego de generar modificaciones
+};
   
-    let listPlayers = document.getElementById("listOfPlayers");
-  
-    players.forEach(
-      (player) =>
-        (htmlPlayers += `<li class="item_list_player" >
-            <p class="player_name">${player.playerName}</p>
-            <i class="bi bi-trash-fill player_delete"id="${player.id}"></i>
-            </li>`)
-    );
-    listPlayers.innerHTML = htmlPlayers;
-    addDeleteButton();
-  };
-  
-  const addDeleteButton = (e) => {
-    let deletePlayer = document.querySelectorAll(".player_delete");
-  
-    deletePlayer.forEach((deleteButton) =>
-      deleteButton.addEventListener("click", deleteButtonHandler)
-    );
-  };
-  
-  render();
-  
-  
-  function guardarEnStorage(object) {
-    let playersLocal = object;
-  
-    localStorage.setItem("playersKey", JSON.stringify(playersLocal));
-  }
+render(); //Metodo utilizado para renderizar la web luego de generar modificaciones
+
+//Función para actualizar información 
+function guardarEnStorage(object) {
+  let playersLocal = object; //Creamos una variable que corresponde al objeto que ingresa como parametro
+  localStorage.setItem("playersKey", JSON.stringify(playersLocal)); //usamos el metodo setItem que nos permite añadir o actualizar el storage; JSON.stringify nos permite cambiar los valores js a una cadena JSON
+}
