@@ -87,8 +87,8 @@ body{
     border: 2px solid #AF1212;
     border-radius: 5px;
     margin: auto;
-  }
-  
+}
+
 .containerPlayers {
     display: flex;
     background-color: transparent;
@@ -100,7 +100,7 @@ body{
     overflow-y: scroll;
     font-size: 0.8rem;
 }
-  
+
 .list{
     width: 90%;
 }
@@ -110,13 +110,17 @@ body{
     width: 100%;
     display: flex;
     justify-content: space-between;
+    color: white;
 }
-  
-.delete {
+.player_delete {
     cursor: pointer;
     transition: 0.3s;
-} 
-.playersName {
+}
+.player_delete:hover {
+    transition: 0.3s;
+    transform: scale(1.2);
+}
+.player_name {
     width: 85%;
     position: relative;
     padding-bottom: 0.9vh;
@@ -131,6 +135,14 @@ body{
     position: absolute;
     bottom: 0;
 }
+.form-control{
+    background-color: transparent;
+    border: #AF1212 solid;
+    width: 90%;
+    height: 150px;
+    margin-bottom: 5px;
+    text-align: center
+}
 .playOverride{
     text-align: center;
     margin-top: 30px;
@@ -139,7 +151,6 @@ body{
 
 @media screen and (max-width: 480px) and (orientation:landscape) {
     .titulo{
-        margin-top: 5%;
         margin-right: 20%;
         text-align: center;
     }
@@ -149,11 +160,15 @@ body{
     }
     .namePlayer i{
         right: 16%;
-        top: 4%
+        top: 8%
     }
     label{
         display: flex;
     }
+    .list-player{
+        margin-right:15%;
+    }
+    
     .img-absoluta{
         width: 25%;
         height: 60%;
@@ -163,5 +178,13 @@ body{
         justify-content: center;
         margin-top:-5px;
         
+    }
+    .img-absoluta{
+        width: 40%;
+        height: 40%;
+}
+    .container_list {
+        margin-bottom: 5%;
+        border: #AF1212 solid;
     }
 }
