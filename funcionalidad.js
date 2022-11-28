@@ -79,3 +79,17 @@ function guardarEnStorage(object) {
   
   localStorage.setItem("playersKey", JSON.stringify(playersLocal)); //Hacemos uso del metodo setItem que nos permite actualizar o crear un objeto; JSON.stringify cambia una cadena de js a JSON
 }
+
+
+//-------------------JAVASCRIPT INDEX.HTML--------------------
+
+
+//--------------------JAVASCRIPT LISTA.HTML--------------------
+
+// --------------------JAVASCRIPT JUEGO.HTML--------------------
+
+//CÓDIGO ANIMACIÓN MUÑEQUITO
+//FINALIZACIÓN ANIMACIÓN MUÑEQUITO
+// CÓDIGO ANIMACIÓN KILLER
+
+//--------------------JAVASCRIPT GAME OVER--------------------
