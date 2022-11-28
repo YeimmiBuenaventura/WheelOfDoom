@@ -58,24 +58,24 @@ body{
     margin-bottom: 20px;
 }
 
-.name-player {
+.namePlayer {
     width: 50%;
     position: relative;
 }
 
-.name-player input{
-    background-color: transparent;
+.namePlayer input{
+    background: transparent;
     border: #AF1212 solid;
     width: 100%;
     color: white;
 }
-.name-player i{
+.namePlayer i{
     color: #AF1212;
     position: absolute;
     right: 7%;
     top: 23%;
 }
-.container_list {
+.boxList {
     width: 80%;
     height: 40vh;
     display: flex;
@@ -86,12 +86,10 @@ body{
     background-color: transparent;
     border: 2px solid #AF1212;
     border-radius: 5px;
-    backdrop-filter: blur(1px);
-    box-shadow: 0vh 5px 5px rgba(0, 0, 0, 0.329);
     margin: auto;
   }
   
-  .container_players {
+.containerPlayers {
     display: flex;
     background-color: transparent;
     height: 70%;
@@ -100,52 +98,40 @@ body{
     border-radius: 5px;
     color: white;
     overflow-y: scroll;
-  }
+    font-size: 0.8rem;
+}
   
-  .list_of_players {
+.list{
     width: 90%;
-  }
-  .item_list_player {
+}
+.itemList {
     margin: 2vh 0;
     position: relative;
     width: 100%;
     display: flex;
     justify-content: space-between;
-  }
+}
   
-  .player_delete {
+.delete {
     cursor: pointer;
     transition: 0.3s;
-  }
-  .player_delete:hover {
-    transition: 0.3s;
-    transform: scale(1.2);
-  }
-  
-  .player_name {
+} 
+.playersName {
     width: 85%;
     position: relative;
     padding-bottom: 0.9vh;
     letter-spacing: 2px;
-  }
-  .player_name::after {
+}
+.playersName::after {
     content: "";
     width: 100%;
     height: 1px;
     left: 0;
-    background-color: #333;
+    background-color: white;
     position: absolute;
     bottom: 0;
-  }
-.form-control{
-    background-color: transparent;
-    border: #AF1212 solid;
-    width: 90%;
-    height: 150px;
-    margin-bottom: 5px;
-    text-align: center
 }
-.play_override{
+.playOverride{
     text-align: center;
     margin-top: 30px;
 }
@@ -157,26 +143,22 @@ body{
         margin-right: 20%;
         text-align: center;
     }
-    .name-player input{
+    .namePlayer input{
         width: 85%;
         margin-left: 5%;
     }
-    .name-player i{
+    .namePlayer i{
         right: 16%;
         top: 4%
     }
     label{
         display: flex;
     }
-    .list-player{
-        margin-right:25%;
-    }
-    
     .img-absoluta{
         width: 25%;
         height: 60%;
     }
-    .play_override{
+    .playOverride{
         display: flex;
         justify-content: center;
         margin-top:-5px;

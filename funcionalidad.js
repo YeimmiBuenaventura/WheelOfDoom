@@ -1,18 +1,10 @@
 let add = document.getElementById('add');
+let player2 = document.getElementById('letra-2')
 let players = [];
-
-
-const deleteButtonHandler = (e) => {
-  let idToDelete = e.target.id;
-  players = players.filter((player) => player.id != idToDelete);
-  guardarEnStorage(players);
-  render();
-};
 
 
 add.addEventListener("click", (e) => {
     e.preventDefault();
-    let player2 = document.getElementById('letra-2')
     let idNewPlayer = players.length;
   
     let nameNewPlayer = player2.value;
@@ -34,36 +26,41 @@ add.addEventListener("click", (e) => {
     guardarEnStorage(players);
 });
   
-  // doom
-  const render = () => {
-    let htmlPlayers = ``;
+const render = () => {
+  let htmlPlayers = ``;
+   
+  let list = document.getElementById("list");
   
+  players.forEach(
+    (player) =>
+      (htmlPlayers += `<li class="itemList" >
+        <p class="playersName">${player.playerName}</p>
+        <i class="bi bi-trash3-fill delete"id="${player.id}"></i>
+        </li>`)
+  );
+  list.innerHTML = htmlPlayers;
+  addDeleteButton();
+};
   
-    let listPlayers = document.getElementById("listOfPlayers");
+const addDeleteButton = (e) => {
+  let deletePlayer = document.querySelectorAll(".delete");
   
-    players.forEach(
-      (player) =>
-        (htmlPlayers += `<li class="item_list_player" >
-            <p class="player_name">${player.playerName}</p>
-            <i class="bi bi-trash-fill player_delete"id="${player.id}"></i>
-            </li>`)
-    );
-    listPlayers.innerHTML = htmlPlayers;
-    addDeleteButton();
-  };
-  
-  const addDeleteButton = (e) => {
-    let deletePlayer = document.querySelectorAll(".player_delete");
-  
-    deletePlayer.forEach((deleteButton) =>
-      deleteButton.addEventListener("click", deleteButtonHandler)
-    );
-  };
-  
+  deletePlayer.forEach((deleteButton) =>
+    deleteButton.addEventListener("click", deletePlayerButton)
+  );
+};
+
+const deletePlayerButton = (e) => {
+  let idToDelete = e.target.id;
+  players = players.filter((player) => player.id != idToDelete);
+  guardarEnStorage(players);
   render();
+};
   
-  function guardarEnStorage(object) {
-    let playersLocal = object;
+render();
   
-    localStorage.setItem("playersKey", JSON.stringify(playersLocal));
-  }
+function guardarEnStorage(object) {
+  let playersLocal = object;
+  
+  localStorage.setItem("playersKey", JSON.stringify(playersLocal));
+}
