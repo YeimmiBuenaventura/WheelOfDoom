@@ -7,20 +7,28 @@ let add = document.getElementById('add');//Se llama el id add del html para pone
 let player2 = document.getElementById('letra-2')//Se llama el id del input en html para poder agregarle la funcionalidad correspondiente
 let players = [];//Se declara un array donde se guardaran los jugadores que se introduzcan
 
-/**
- * @event
- * * Evento click para el proceso de agregar el nombre a la lista
- */
 
 
-player2.addEventListener("keypress", (i) => {//Se agrega el evento de escucha de cuando se presiona la tecla y se crea la función
-  if (i.code === 'Enter') {//Si se presiona la tecla Enter
-    add.click();//Se ejecutaran los eventos que se le atribuyen a la variable add
+// se reconoce el elemento de audio
+const audio = document.createElement("audio");
+audio.preload = "auto";
+audio.src= "sonidos/lobby-sound.wav"
+audio.volume = 0.2; 
+
+ // se hace play al audio
+audio.play();
+
+
+// se trae el nodo input del html, en donde se ingresan los jugadores, se agrega el evento .addEventListener keydown "tecla abajo", para reconocer cuando se presiona una tecla, en una condicional se pregunta si es la tecla enter y se ejecuta la funcion que agrega al juegador
+document.getElementById('letra-2').addEventListener('keydown',(e)=>{
+  if (e.which === 13) {
+    addplayers(e);
   }
 });
 
-add.addEventListener("click", (e) => {
-    e.preventDefault();
+function addplayers(e){
+
+  e.preventDefault();
 
     // Se genera un identificador unico basado en la longitud del array jugadores existente
     let idNewPlayer = players.length;
@@ -39,18 +47,19 @@ add.addEventListener("click", (e) => {
       });
     }
 
-    // se reconoce el elemento de audio
-    const audio = document.createElement("audio");
-    audio.preload = "auto";
-    audio.src= "sonidos/lobby-sound.wav"
     player2.value = "";
-     // se hace play al audio
-    audio.play()
+    
     // se renderiza la lista con los nuevos elementos del  array
     render();
     // se guarda en el local storage el array
     guardarEnStorage(players);
-});
+}
+
+/**
+ * @event
+ * * Evento click para el proceso de agregar el nombre a la lista
+ */
+add.addEventListener("click", addplayers);
   
 
 const render = () => {//Se declara una variable constante como objeto donde se busca crear nuevos objetos en el html a partir de javaScript para que aparezcan solo cuando sea pertinente 
