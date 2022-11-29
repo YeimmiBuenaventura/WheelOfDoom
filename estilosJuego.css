@@ -159,13 +159,21 @@
     background-repeat: no-repeat;
     transform:translateX(230px) translateY(-50px);
     z-index:1;
+    animation-name: victim;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count:infinite;
+    animation-fill-mode: forwards ;
+    -webkit-animation-direction: alternate-reverse;
 }
 .muerto{
     background-image: url(/imagenes/ilustraciones/victim/6.png);
-    width: 200px;
-    height: 200px;
-    background-size: 200px 200px;
+    width: 180px;
+    height: 180px;
+    background-size: 180px 180px;
     background-repeat: no-repeat;
+    transform:translateX(230px) translateY(-50px);
+    z-index:1;
     animation: none;
 }
 .canvaKillerCel{
@@ -222,6 +230,16 @@ body{
     background-repeat: no-repeat;
     transform:translateX(450px) translateY(330px) scale(2.5);
     z-index:1;
+}
+.muerto{
+    background-image: url(/imagenes/ilustraciones/victim/6.png);
+    width: 180px;
+    height: 180px;
+    background-size: 180px 180px;
+    background-repeat: no-repeat;
+    transform:translateX(450px)  translateY(330px) scale(2.5);
+    z-index:1;
+    animation: none;
 }
 .canvaKillerCel{
     display: none;
@@ -280,6 +298,16 @@ overflow: hidden;
     transform:translateX(700px) translateY(200px) scale(2.5);
     z-index:1;
 }
+.muerto{
+    background-image: url(/imagenes/ilustraciones/victim/6.png);
+    width: 180px;
+    height: 180px;
+    background-size: 180px 180px;
+    background-repeat: no-repeat;
+    transform:translateX(700px) translateY(200px) scale(2.5);
+    z-index:1;
+    animation: none;
+}
 .canvaKillerCel{
     display: none;
 }
@@ -335,6 +363,16 @@ overflow: hidden;
     background-repeat: no-repeat;
     transform:translateX(900px) translateY(200px) scale(2.5);
     z-index:1;
+}
+.muerto{
+    background-image: url(/imagenes/ilustraciones/victim/6.png);
+    width: 180px;
+    height: 180px;
+    background-size: 180px 180px;
+    background-repeat: no-repeat;
+    transform:translateX(900px) translateY(200px) scale(2.5);
+    z-index:1;
+    animation: none;
 }
 .canvaKillerCel{
     display: none;

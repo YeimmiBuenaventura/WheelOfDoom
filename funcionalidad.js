@@ -9,14 +9,14 @@
 let botonDisparo = document.getElementById("disparar")
 let canvasVictima = document.getElementById("victima")
 let canvasKillerCel = document.getElementById("killerCel")
-let canvaKiller = document.getElementById("killer")
+let canvasKiller = document.getElementById("killer")
 
 botonDisparo.addEventListener("click", iniciar);
 
 function iniciar (){
     canvasKillerCel.classList.add("killerDisparandoCel")
     canvasVictima.classList.add("muerto")
-    canvasVictima.classList.add("killerDisparando")
+    canvasKiller.classList.add("killerDisparando")
 }
 
 //CÓDIGO ANIMACIÓN MUÑEQUITO
