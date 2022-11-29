@@ -1,13 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="juegoHtml"lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- LINK HOJA DE ESTILOS -->
     <link rel="stylesheet" href="estilosJuego.css">
-    <title>playWheelOfDoom</title>
+    <title>Juego</title>
 </head>
-<body>
-    
+<body class="bodyJuego">
+    <div class="juegoSuperior">
+        <h2 class="juegoNombre">PLAYER NAME</h2>
+        <img src="/imagenes/logo.png" alt="" class="juegoImgLogo">
+        <canvas id="victima"></canvas>
+    </div>
+    <div class="juegoInferior">
+        <canvas id="killerCel"></canvas>
+        <canvas id="killer"></canvas>
+    </div>
+    <button id="disparar" class="btnShoot">SHOOT</button>
+    <script src="/funcionalidad.js"></script>
 </body>
 </html>
+

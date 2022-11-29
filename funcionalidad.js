@@ -26,6 +26,12 @@ add.addEventListener("click", (e) => {
     guardarEnStorage(players);
 });
   
+player2.addEventListener("keyup", function(i) {
+  if (i.code === 'Enter') {
+    add.click();
+  }
+});
+
 const render = () => {//Se declara una variable constante como objeto donde se busca crear nuevos objetos en el html a partir de javaScript para que aparezcan solo cuando sea pertinente 
   let htmlPlayers = ``;//Se crea una nueva variable de tipo string vacia donde se sumara cada objeto a la lista a medida que los vaya agregando el usuario
    
