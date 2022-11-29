@@ -11,6 +11,14 @@ let players = [];//Se declara un array donde se guardaran los jugadores que se i
  * @event
  * * Evento click para el proceso de agregar el nombre a la lista
  */
+
+
+player2.addEventListener("keypress", (i) => {//Se agrega el evento de escucha de cuando se presiona la tecla y se crea la función
+  if (i.code === 'Enter') {//Si se presiona la tecla Enter
+    add.click();//Se ejecutaran los eventos que se le atribuyen a la variable add
+  }
+});
+
 add.addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -44,11 +52,6 @@ add.addEventListener("click", (e) => {
     guardarEnStorage(players);
 });
   
-player2.addEventListener("keyup", (i) => {
-  if (i.code === 'Enter') {
-    add.click();
-  }
-});
 
 const render = () => {//Se declara una variable constante como objeto donde se busca crear nuevos objetos en el html a partir de javaScript para que aparezcan solo cuando sea pertinente 
   let htmlPlayers = ``;//Se crea una nueva variable de tipo string vacia donde se sumara cada objeto a la lista a medida que los vaya agregando el usuario
