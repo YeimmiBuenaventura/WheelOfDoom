@@ -4,4 +4,233 @@
 }
 *{
     font-family: TrueType;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+a{
+    text-decoration: none;
+    /* color: white; */
+}
+
+/*responsive celular vertical*/
+@media (max-width: 320px) {
+    body{
+        background-image:url("/imagenes/mobile1.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-y:-80px ;
+    }
+
+    .principalVertical{
+        margin-top: 45px;
+        font-size: 24px;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+    }
+    
+    .buttons{
+        display: flex;
+        justify-content: center;
+    }
+
+    .btnStart{
+        margin-top:80px;
+        background-color: #fff;
+        border-radius: 40px;
+        color: #000;
+    }
+    
+    div .fondo2{
+        display: none;
+    }
+}
+
+
+/*responsive celular horizontal*/
+ @media (max-width: 480px) and (orientation: landscape) {
+    body{
+        overflow-y:hidden;
+        background-image:none;
+    }
+    
+    div.fondosCel{
+        display:flex;
+     }
+   
+    div.fondo1{
+        background-image:url("/imagenes/mobile1.jpeg");
+        background-size: cover;
+        width: 60%;
+        height: 320px;
+        background-position-y:-180px ;
+    }
+    div.fondo2{
+      background-image:url("/imagenes/fondo-rojo.jpeg");
+      height: 320px;
+      width: 40%;
+      }
+    
+    .principalHorizontal{
+        margin-top: 45px;
+        font-size: 20px;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+    }
+    .principalVertical{
+        display: none;
+    }
+    
+    button.btnStart{
+        margin-top: -180px;
+        padding:5px;
+        height: 40px;
+        background-color: #fff;
+        margin-left: 290px;
+    }
+} 
+
+/*responsive tablet vertical*/
+@media (min-width:481px) and (max-width: 768px){
+
+    body{
+        background-image:url("/imagenes/tablet.png");
+        overflow-y:hidden;
+    }
+    
+    .principalHorizontal{
+        display: none;
+    }
+    .principalVertical{
+        margin-top: 800px;
+        font-size: 50px;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+    }
+    
+    button.btnStart{
+        margin-top: -680px;
+        padding:5px;
+        height: 80px;
+        width: 140px;
+        background-color: #fff;
+        margin-right: -60px;
+        font-size: 30px;
+    }
+
+}
+
+/*responsive tablet horizonatl*/
+/* @media (min-width: 768px)and (max-width:830px){
+    body{
+        background-image:url("../WheelOfDoom/imagenes/desktop1.jpeg");
+    }
+    
+    .principalHorizontal{
+        margin-top: 800px;
+        font-size: 50px;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        display: none;
+    }
+    .principalVertical{
+        display: none;
+    }
+    
+    
+
+    button.btnStart{
+        margin-top: -680px;
+        padding:5px;
+        height: 80px;
+        width: 140px;
+        background-color: #fff;
+        margin-right: -60px;
+        font-size: 30px;
+    }
+
+} 
+ */
+
+
+/*responsive desktop*/
+@media (min-width:1024px){
+    body{
+        background-image: url("/imagenes/desktop1.jpeg");
+        background-size: 100% 850px ;
+        background-repeat: no-repeat;
+        
+    }
+    
+    .principalHorizontal{
+        margin-top: 45px;
+        font-size: 64px;
+        line-height: 80px;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+    }
+    .principalVertical{
+        display: none;
+    }
+    
+       button.btnStart{
+        margin-top: 300px;
+        padding:5px;
+        height: 90px;
+        width: 180px;
+        background-color: #fff;
+        font-size: 40px;
+    }
+}
+
+
+
+    .buttons{
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
+    }
+
+    .btnStart{
+        background-color: #fff;
+        border-radius: 40px;
+        color: #000;
+    }
+    
+    
+  .button {
+    width: 170px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .btnStart {
+    color: #fff;
+    border: 3px solid #AF1212;
+    background-image: -webkit-linear-gradient(30deg, #AF1212 50%, transparent 50%);
+    background-image: linear-gradient(30deg, #AF1212 50%, transparent 50%);
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    -webkit-transition: background 300ms ease-in-out;
+    transition: background 300ms ease-in-out;
+  }
+
+  .btnStart:hover {
+    background-position: 100%;
+    color: #AF1212;
+  }

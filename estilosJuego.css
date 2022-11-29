@@ -9,27 +9,12 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* -----------KEYFRAMES------------ */
-@keyframes victim{
-    10% {background-image: url(/imagenes/ilustraciones/victim/1.png);}
-    30%{background-image: url(/imagenes/ilustraciones/victim/2.png);}
-    55% {background-image: url(/imagenes/ilustraciones/victim/3.png);}
-    75%{background-image: url(/imagenes/ilustraciones/victim/4.png);}
-    80% {background-image: url(/imagenes/ilustraciones/victim/5.png);}
-    90%{background-image: url(/imagenes/ilustraciones/victim/6.png);}
-}
-@keyframes killer{
-    10% {background-image: url(./img/killer1.png);}
-    20%{background-image: url(./img/killer2.png);}
-    40% {background-image: url(./img/killer1.png);}
-    60%{background-image: url(./img/killer2.png);}
-    80% {background-image: url(./img/killer1.png);}
-    100%{background-image: url(./img/killer2.png);}
-}
+
 /* -----------ESTILOS JUEGO.HTML--------- */
 
 .juegoHtml{
     font-size: 10px;
+    overflow: hidden;
 }
 .bodyJuego{
     height: auto;
@@ -45,6 +30,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    z-index: 0;
 }
     
 .juegoNombre{
@@ -61,24 +47,6 @@
     top:65px;
     z-index:0;
 }
-.imgVictima{
-    position: relative;
-    top:55px;
-    z-index:1;
-    width: 180px;
-    height: 180px ;
-}
-.imgKiller{
-    width: 200px;
-    height: 190px ;
-}
-.imgKillerHoriz{
-    display: none;
-}
-
-/* ---CANVAS VICTIMA-- */
-#jugador{
-}
 
 /* ---PARTE INFERIOR JUEGO - KILLER ----- */
 .juegoInferior{
@@ -88,12 +56,8 @@
     display: flex;
     justify-content: center;
     align-items:center;
+    z-index: 0;
 }
-/* ---CANVAS KILLER-- */
-#matador{
-
-}
-
 /* ----BOTON DISPARAR */
 
 .btnShoot {
@@ -117,6 +81,56 @@
     color: #AF1212;
 }
 
+/* -------------CANVAS---------------- */
+.canvaVictima{
+    width: 200px;
+    height: 200px;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+    animation-name: victim;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count:infinite;
+    animation-fill-mode: forwards ;
+    -webkit-animation-direction: alternate-reverse;
+    position: absolute;
+    top:125px;
+    left: 65px;
+    z-index:1;
+}
+/* CLASSLIST MUERTO CREADA ADICIONAL CUANDO HAY EVENTO DE CLICK */
+.muerto{
+    background-image: url(/imagenes/ilustraciones/victim/6.png);
+    width: 200px;
+    height: 200px;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+    animation: none;
+}
+.canvaKillerCel{
+    background-image: url(/imagenes/ilustraciones/killerCel/1.png);
+    width: 200px;
+    height: 200px;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 55px;
+    z-index:1;
+}
+/* CLASSLIST KILLERDISPARANDO CREADA ADICIONAL CUANDO HAY EVENTO DE CLICK */
+.killerDisparandoCel{
+    animation-name: killerCelular;
+    animation-duration: 200ms;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; 
+}
+.canvaKiller{
+    display: none;
+}
+
+
 /* ----------MEDIA QUERIES ------------- */
 
 /* -----------MEDIA QUERIE CELULAR LANDSCAPE */
@@ -137,168 +151,276 @@
         left: 105px;
         z-index:0;
     }
-    .imgVictima{
-        position: absolute;
-        top:35px;
-        left: 300px;
-        z-index:1;
-        width: 180px;
-        height: 180px ;
-    }
-    .imgKiller{
-        display:none;
-    }
-    .imgKillerHoriz{
-        display: flex;
-        position: absolute;
-        top:85px;
-        left:0;
-        width:260px;
-        height:280px ;
-    }
-    .btnShoot {
-        position: absolute;
-        padding: 0.2rem 2.2rem;
-        top:260px;
-        left: 230px;
+/* -------------CANVAS---------------- */
+.canvaVictima{
+    width: 180px;
+    height: 180px;
+    background-size: 180px 180px;
+    background-repeat: no-repeat;
+    transform:translateX(230px) translateY(-50px);
+    z-index:1;
+    animation-name: victim;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count:infinite;
+    animation-fill-mode: forwards ;
+    -webkit-animation-direction: alternate-reverse;
+}
+.muerto{
+    background-image: url(/imagenes/ilustraciones/victim/6.png);
+    width: 180px;
+    height: 180px;
+    background-size: 180px 180px;
+    background-repeat: no-repeat;
+    transform:translateX(230px) translateY(-50px);
+    z-index:1;
+    animation: none;
+}
+.canvaKillerCel{
+    display: none;
+}
+
+.canvaKiller{
+    display: flex;
+    background-image: url(/imagenes/ilustraciones/killer/killer1.png);
+    width: 300px;
+    height: 300px;
+    background-size: 230px 270px;
+    transform: translateX(-80px) translateY(-5px);
+    background-repeat: no-repeat;
+}
+/* CLASSLIST KILLERDISPARANDO CREADA ADICIONAL CUANDO HAY EVENTO DE CLICK */
+.killerDisparando{
+    animation-name: killerHoriz;
+    animation-duration: 200ms;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; 
+}
+/* ------BOTON DISPARAR--------- */
+.btnShoot {
+    position: absolute;
+    padding: 0.2rem 2.2rem;
+    top:260px;
+    left: 230px;
     }
 }
 /* --------MEDIA QUERIE TABLET 481x768 ------------ */
-@media  (min-width:481px) and (max-width:768px) {
-   body{
+@media (min-width:481px) and (max-width:768px) {
+body{
     overflow: hidden;
-   }
-    .juegoNombre{
-        font-size: 6rem;
-        padding-top: 12rem;
-    }
-    .juegoImgLogo{
-        display: block;
-        width: 45rem;
-        position: absolute;
-        top:17rem;
-        left: 12rem;
-        z-index:0;
-    }
-    .imgVictima{
-        position: absolute;
-        top: 35rem;
-        left: 35rem;
-        z-index:1;
-        width: 480px;
-        height: 460px ;
-    }
-    .imgKiller{
-        display:none;
-    }
-    .imgKillerHoriz{
-        display: flex;
-        position: absolute;
-        top:55rem;
-        left:-2rem;
-        width:510px;
-        height:580px ;
-    }
-    .btnShoot {
-        padding: 1.2rem 4rem;
-        font-size: 2.3rem;
-        border-radius: 5rem;
-        position: absolute;
-        top:90rem;
-        left: 45rem;
-    }
+}
+.juegoNombre{
+    font-size: 6rem;
+    padding-top: 12rem;
+}
+.juegoImgLogo{
+    display: block;
+    width: 45rem;
+    position: absolute;
+    top:17rem;
+    left: 12rem;
+    z-index:0;
+}
+    /* -------------CANVAS---------------- */
+.canvaVictima{
+    width: 180px;
+    height: 180px;
+    background-size: 180px 180px;
+    background-repeat: no-repeat;
+    transform:translateX(450px) translateY(330px) scale(2.5);
+    z-index:1;
+}
+.muerto{
+    background-image: url(/imagenes/ilustraciones/victim/6.png);
+    width: 180px;
+    height: 180px;
+    background-size: 180px 180px;
+    background-repeat: no-repeat;
+    transform:translateX(450px)  translateY(330px) scale(2.5);
+    z-index:1;
+    animation: none;
+}
+.canvaKillerCel{
+    display: none;
+}
+
+.canvaKiller{
+    display: flex;
+    background-image: url(/imagenes/ilustraciones/killer/killer1.png);
+    width: 300px;
+    height: 300px;
+    background-size: 230px 270px;
+    transform: translateX(-60px) translateY(20px) scale(2.3);
+    background-repeat: no-repeat;
+}
+/* CLASSLIST KILLERDISPARANDO CREADA ADICIONAL CUANDO HAY EVENTO DE CLICK */
+.killerDisparando{
+    animation-name: killerHoriz;
+    animation-duration: 200ms;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; 
+}
+/* ------BOTON DISPARAR--------- */
+.btnShoot {
+    padding: 1.2rem 4rem;
+    font-size: 2.3rem;
+    border-radius: 5rem;
+    position: absolute;
+    top:90rem;
+    left: 45rem;
+}
 }
 /* --------MEDIA QUERIE TABLET 768 x 481 LANDSCAPE------------ */
-@media (min-width:768px) and (orientation:landscape) {
-    body{
-     overflow: hidden;
-    }
-     .juegoNombre{
-         font-size: 6rem;
-         padding-top: 6rem;
-     }
-     .juegoImgLogo{
-         display: block;
-         width: 45rem;
-         position: absolute;
-         top:12rem;
-         left: 25rem;
-         z-index:0;
-     }
-     .imgVictima{
-         position: absolute;
-         top: 18rem;
-         left: 61rem;
-         z-index:1;
-         width: 480px;
-         height: 460px ;
-     }
-     .imgKiller{
-         display:none;
-     }
-     .imgKillerHoriz{
-         display: flex;
-         position: absolute;
-         top:29rem;
-         left:-2rem;
-         width:510px;
-         height:580px ;
-     }
-     .btnShoot {
-         padding: 2rem 4rem;
-         font-size: 2.3rem;
-         border-radius: 5rem;
-         position: absolute;
-         top:65rem;
-         left: 45rem;
-     }
- }
+@media (min-width:769px) and (orientation:landscape) {
+body{
+overflow: hidden;
+}
+.juegoNombre{
+    font-size: 6rem;
+    padding-top: 6rem;
+}
+.juegoImgLogo{
+    display: block;
+    width: 45rem;
+    position: absolute;
+    top:12rem;
+    left: 25rem;
+    z-index:0;
+}
+/* -------------CANVAS---------------- */
+.canvaVictima{
+    width: 180px;
+    height: 180px;
+    background-size: 180px 180px;
+    background-repeat: no-repeat;
+    transform:translateX(700px) translateY(200px) scale(2.5);
+    z-index:1;
+}
+.muerto{
+    background-image: url(/imagenes/ilustraciones/victim/6.png);
+    width: 180px;
+    height: 180px;
+    background-size: 180px 180px;
+    background-repeat: no-repeat;
+    transform:translateX(700px) translateY(200px) scale(2.5);
+    z-index:1;
+    animation: none;
+}
+.canvaKillerCel{
+    display: none;
+}
+
+.canvaKiller{
+    display: flex;
+    background-image: url(/imagenes/ilustraciones/killer/killer1.png);
+    width: 300px;
+    height: 300px;
+    background-size: 230px 270px;
+    transform: translateX(-190px) translateY(-10px) scale(2.3);
+    background-repeat: no-repeat;
+}
+/* CLASSLIST KILLERDISPARANDO CREADA ADICIONAL CUANDO HAY EVENTO DE CLICK */
+.killerDisparando{
+    animation-name: killerHoriz;
+    animation-duration: 200ms;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; 
+}
+/* ------BOTON DISPARAR--------- */
+.btnShoot {
+    padding: 2rem 4rem;
+    font-size: 2.3rem;
+    border-radius: 5rem;
+    transform: translateX(300px) translateY(390px) scale(1);
+}
+}
 
 /* --------MEDIA QUERIE COMPU------------ */
-@media only (max-width:1024px)  and (orientation:landscape){
-    body{
-     overflow: hidden;
-    }
-     .juegoNombre{
-         font-size: 10rem;
-         padding-top: 6rem;
-     }
-     .juegoImgLogo{
-         display: block;
-         width: 45rem;
-         position: absolute;
-         top:18rem;
-         left: 28rem;
-         z-index:0;
-     }
-     .imgVictima{
-         position: absolute;
-         top: 20rem;
-         left: 85rem;
-         z-index:1;
-         width: 560px;
-         height: 540px ;
-     }
-     .imgKiller{
-         display:none;
-     }
-     .imgKillerHoriz{
-         display: flex;
-         position: absolute;
-         top:32rem;
-         left:-2rem;
-         width:550px;
-         height:620px ;
-     }
-     .btnShoot {
-         padding: 2rem 4rem;
-         font-size: 3rem;
-         border-radius: 5rem;
-         position: absolute;
-         top:67rem;
-         left: 45rem;
-     }
+@media only(min-width:1024px) {
+body{
+overflow: hidden;
+}
+.juegoNombre{
+    font-size: 10rem;
+    padding-top: 6rem;
+}
+.juegoImgLogo{
+    display: block;
+    width: 45rem;
+    position: absolute;
+    top:18rem;
+    left: 28rem;
+    z-index:0;
+}
+/* -------------CANVAS---------------- */
+.canvaVictima{
+    width: 180px;
+    height: 180px;
+    background-size: 180px 180px;
+    background-repeat: no-repeat;
+    transform:translateX(900px) translateY(200px) scale(2.5);
+    z-index:1;
+}
+.muerto{
+    background-image: url(/imagenes/ilustraciones/victim/6.png);
+    width: 180px;
+    height: 180px;
+    background-size: 180px 180px;
+    background-repeat: no-repeat;
+    transform:translateX(900px) translateY(200px) scale(2.5);
+    z-index:1;
+    animation: none;
+}
+.canvaKillerCel{
+    display: none;
+}
+
+.canvaKiller{
+    display: flex;
+    background-image: url(/imagenes/ilustraciones/killer/killer1.png);
+    width: 300px;
+    height: 300px;
+    background-size: 230px 270px;
+    transform: translateX(-180px) translateY(-10px) scale(2.3);
+    background-repeat: no-repeat;
+}
+/* CLASSLIST KILLERDISPARANDO CREADA ADICIONAL CUANDO HAY EVENTO DE CLICK */
+.killerDisparando{
+    animation-name: killerHoriz;
+    animation-duration: 200ms;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; 
+}
+
+/* ------BOTON DISPARAR--------- */
+.btnShoot {
+    padding: 2rem 4rem;
+    font-size: 3rem;
+    border-radius: 5rem;
+    position: absolute;
+    top:67rem;
+    left: 75rem;
+}
 } 
-#lienzo2 {
-    border: 1px solid black;
+
+/* -----------KEYFRAMES------------ */
+@keyframes victim{
+    0% {background-image: url(/imagenes/ilustraciones/victim/1.png);}
+    20% {background-image: url(/imagenes/ilustraciones/victim/1.png);}
+    40%{background-image: url(/imagenes/ilustraciones/victim/2.png);}
+    60% {background-image: url(/imagenes/ilustraciones/victim/3.png);}
+    80%{background-image: url(/imagenes/ilustraciones/victim/4.png);}
+    100% {background-image: url(/imagenes/ilustraciones/victim/5.png);}
+}
+@keyframes killerCelular{
+    0% {background-image: url(/imagenes/ilustraciones/killerCel/1.png);}
+    100%{background-image: url(/imagenes/ilustraciones/killerCel/2.png);}
+}
+@keyframes killerHoriz{
+    0% {background-image: url(/imagenes/ilustraciones/killer/killer1.png);}
+    100%{background-image: url(/imagenes/ilustraciones/killer/killer2.png);}
 }
