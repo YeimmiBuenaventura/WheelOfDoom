@@ -1,25 +1,4 @@
 
-
-
-// --------------------JAVASCRIPT JUEGO.HTML--------------------
-let botonDisparo = document.getElementById("disparar")
-let canvasVictima = document.getElementById("victima")
-let canvasKillerCel = document.getElementById("killerCel")
-let canvasKiller = document.getElementById("killer")
-
-botonDisparo.addEventListener("click", iniciar);
-
-function iniciar (){
-    canvasKillerCel.classList.add("killerDisparandoCel")
-    canvasVictima.classList.add("muerto")
-    canvasKiller.classList.add("killerDisparando")
-}
-
-//CÓDIGO ANIMACIÓN MUÑEQUITO
-//FINALIZACIÓN ANIMACIÓN MUÑEQUITO
-// CÓDIGO ANIMACIÓN KILLER
-
-//--------------------JAVASCRIPT GAME OVER--------------------
 //En este script se aplica las funcionalidades de las 4 vistas principales del juego, divididas en, Inicio del Juego, Lista de Jugadores, Game y Gameover.
 
 // Se declaran las variables de la vista de Lista de jugadores traidas con su respectiva clase de lista.html, de esta forma se declaran 3 variables principales para darle funcionalidad a esta vista 
