@@ -29,9 +29,6 @@ function disparar (){
 
     
 }
-
-
-
 function getPlayers() {
     const jugadores = JSON.parse(localStorage.getItem('playersKey'));
     return jugadores;
