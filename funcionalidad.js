@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-const SOUND = new Audio("/sonidos/lobby-sound.wav");
-
-SOUND.autoplay('load', ()=>{
-    SOUND.play();
-})
-=======
 
 //En este script se aplica las funcionalidades de las 4 vistas principales del juego, divididas en, Inicio del Juego, Lista de Jugadores, Game y Gameover.
 
@@ -106,4 +99,3 @@ function guardarEnStorage(object) {
   let playersLocal = object; //Creamos una variable que corresponde al objeto que ingresa como parametro
   localStorage.setItem("playersKey", JSON.stringify(playersLocal)); //usamos el metodo setItem que nos permite añadir o actualizar el storage; JSON.stringify nos permite cambiar los valores js a una cadena JSON
 }
->>>>>>> e8d9cbead6e30c7e350fa4982efec8a42f74ff78
