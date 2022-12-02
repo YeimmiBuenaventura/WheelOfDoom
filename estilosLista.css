@@ -1,0 +1,328 @@
+@font-face {
+    font-family: TrueType;
+    src: url('fuente/Game-Of-Squids.ttf');
+}
+
+*{
+    font-family: TrueType;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.play{
+    background-color: #fff;
+    border-radius: 40px;
+    color: #000;
+}
+.play{
+    color: #fff;
+    border: 3px solid #AF1212;
+    background-image: -webkit-linear-gradient(30deg, #AF1212 50%, transparent 50%);
+    background-image: linear-gradient(30deg, #AF1212 50%, transparent 50%);
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    -webkit-transition: background 300ms ease-in-out;
+    transition: background 300ms ease-in-out;
+}
+
+.play:hover {
+    background-position: 100%;
+    color: #AF1212;
+    background-color: white;
+}
+
+body{
+    background-image: url(./imagenes/fondo-lista.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    margin-left: 10px;
+}
+.img-absoluta{
+    position:absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 40%;
+    -webkit-animation: circle 6s infinite linear;
+    animation: circle 6s infinite linear;
+}
+
+@-webkit-keyframes circle{
+    0%{
+        transform: rotate(0deg); transform-origin: top;
+    }
+    25%{
+        transform: rotate(20deg); transform-origin: top;
+    }
+    50%{
+        transform: rotate(0deg);transform-origin: top;
+    }
+    75%{
+        transform: rotate(-20deg); transform-origin: top;
+    }
+    100%{
+        transform:rotate(0deg);transform-origin: top;
+    }
+}
+.play{
+    background-color: #AF1212;
+    color: white;
+    border-radius: 30%;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+}
+.titulo{
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.namePlayer {
+    width: 50%;
+    position: relative;
+}
+
+.namePlayer input{
+    background: transparent;
+    border: #AF1212 solid;
+    width: 100%;
+    color: white;
+}
+.namePlayer i{
+    color: #AF1212;
+    position: absolute;
+    right: 7%;
+    top: 23%;
+}
+.boxList {
+    width: 80%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    background-color: transparent;
+    border: 2px solid #AF1212;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.containerPlayers {
+    display: flex;
+    background-color: transparent;
+    height: 70%;
+    justify-content: center;
+    width: 90%;
+    border-radius: 5px;
+    color: white;
+    overflow-y: scroll;
+    font-size: 0.8rem;
+}
+
+.list{
+    width: 90%;
+}
+.itemList {
+    margin: 2vh 0;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+.player_delete {
+    cursor: pointer;
+    transition: 0.3s;
+}
+.player_delete:hover {
+    transition: 0.3s;
+    transform: scale(1.2);
+}
+.player_name {
+    width: 85%;
+    position: relative;
+    padding-bottom: 0.9vh;
+    letter-spacing: 2px;
+}
+.playersName::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    left: 0;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+}
+.form-control{
+    background-color: transparent;
+    border: #AF1212 solid;
+    width: 90%;
+    height: 150px;
+    margin-bottom: 5px;
+    text-align: center
+}
+.playOverride{
+    text-align: center;
+    margin-top: 30px;
+}
+    
+
+@media screen and (max-width: 480px) and (orientation:landscape) {
+    .contenido{
+        display: flex;
+    }
+    .titulo{
+        margin-right: 20%;
+        text-align: center;
+    }
+    .namePlayer input{
+        width: 140%;
+        margin-left: 0%;
+    }
+    .namePlayer i {
+        left: 120%;
+        top: 5%;
+        font-size: 1rem;
+    }
+    label{
+        display: flex;
+        left: 122%;
+    }
+    .list-player{
+        margin-right:15%;
+    }
+    
+ 
+    .img-absoluta{
+        width: 25%;
+        height: 60%;
+    }
+    .boxList {
+        margin-left: -30px;
+        width: 150%;
+    }
+    .playOverride{
+        display: flex;
+        justify-content: center;
+        
+    }
+}
+
+@media screen and (min-width: 481px){
+    .titulo{
+        font-size: 1.5rem;
+        margin-left: 1rem;
+        margin-top: -1rem;
+    }
+    .namePlayer input{
+        width: 100%;
+        height: 6vh;
+        font-size: 1.5rem;
+        margin-left: 0.3rem;
+}
+    .boxList {
+        margin-top: 3rem;
+        margin-left: 3rem;
+        width: 80%;
+        height: 50vh;
+        font-size: 1.2rem;
+}
+    .img-absoluta{
+        height: 30vh;
+    }           
+    .play{
+        font-size: 1.5rem;
+        width: 6rem;
+        height: 3rem;
+}
+    .namePlayer i {
+        left: 90%;
+        top: 15%;
+        font-size: 2rem;
+}
+}
+@media screen and (min-width: 768px) and (orientation:landscape) {
+    .titulo{
+        font-size: 1.5rem;
+        margin-left: 3rem;
+        margin-top: -15;
+    }
+    .namePlayer input{
+        width: 100%;
+        height: 7vh;
+        font-size: 1.5rem;
+        margin-left: 3rem;
+    }
+    .namePlayer i {
+        left: 100%;
+        top: 12%;
+        font-size: 1.5rem;
+    }
+    .img-absoluta{
+        height: 50vh;
+    }
+    .boxList {
+        margin-top: -5rem;
+        margin-left: 3rem;
+        width: 50%;
+        height: 50vh;
+        font-size: 1.5rem;
+    }
+    .play{
+        margin-left: -18rem;
+        font-size: 1.5rem;
+        width: 6rem;
+        height: 3rem;
+    }
+    .titleList{
+        font-size: 1.5rem;
+    }
+    .containerPlayers {
+        font-size: 1.3rem;
+    }
+
+}
+
+@media screen and (min-width: 1020px){
+    .titulo{
+        font-size: 2rem;
+        margin-left: 3rem;
+        margin-top: 2rem;
+    }
+    .namePlayer input{
+        width: 100%;
+        height: 8vh;
+        font-size: 1.5rem;
+        margin-left: 3rem;
+    }
+    .namePlayer i{
+        left: 100%;
+        top: 30%;
+        font-size: 30px;
+    }
+    .img-absoluta{
+        height: 80vh;
+    }
+    .boxList {
+        margin-top: -5rem;
+        margin-left: 3rem;
+        width: 50%;
+        height: 50vh;
+        font-size: 1.5rem;
+    }
+    .play{
+        margin-left: -30rem;
+        font-size: 2rem;
+        width: 8rem;
+        height: 5rem;
+    }
+    .containerPlayers {
+        font-size: 1.3rem;
+    }
+}
