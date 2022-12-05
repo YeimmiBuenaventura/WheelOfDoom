@@ -18,17 +18,20 @@ function disparar (){
 
     globalPlayers.splice(currentSelectedIndex, 1);
     
-    Swal.fire({ title: `Jugador ${currentSelected.playerName} muertito`, background:"#AF1212", color:"white", confirmButtonColor:"black", showClass: { popup: 'animate__animated animate__fadeInDown' }, hideClass: { popup: 'animate__animated animate__fadeOutUp' } }).then(()=>{
+    Swal.fire({ title: `Jugador ${currentSelected.playerName} muertito`, background:"#AF1212", color:"white", confirmButtonColor:"black", showClass: { popup: 'animate__animated animate__fadeInDown'}, hideClass: { popup: 'animate__animated animate__fadeOutUp' } }).then(()=>{
         canvasKillerCel.classList.remove("killerDisparandoCel")
         canvasVictima.classList.remove("muerto")
         canvasKiller.classList.remove("killerDisparando")
 
-
+        
         selectPlayer();
     })
 
     
 }
+
+
+
 
 
 
