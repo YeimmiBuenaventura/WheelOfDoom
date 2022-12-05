@@ -16,9 +16,15 @@ function disparar (){
     canvasVictima.classList.add("muerto")
     canvasKiller.classList.add("killerDisparando")
 
+    const audio = document.createElement("audio");
+    audio.preload = "auto";
+    audio.src= "sonidos/disparos.wav";
+    audio.volume = 0.4;
+    audio.play()  
     globalPlayers.splice(currentSelectedIndex, 1);
     
-    Swal.fire({ title: `Jugador ${currentSelected.playerName} muertito`, background:"#AF1212", color:"white", confirmButtonColor:"black", showClass: { popup: 'animate__animated animate__fadeInDown'}, hideClass: { popup: 'animate__animated animate__fadeOutUp' } }).then(()=>{
+    setTimeout(()=>{ 
+        Swal.fire({ title: `Jugador ${currentSelected.playerName} muerto`, background:"#AF1212", color:"white", confirmButtonColor:"black", showClass: { popup: 'animate__animated animate__fadeInDown' }, hideClass: { popup: 'animate__animated animate__fadeOutUp' } }).then(()=>{
         canvasKillerCel.classList.remove("killerDisparandoCel")
         canvasVictima.classList.remove("muerto")
         canvasKiller.classList.remove("killerDisparando")
@@ -27,12 +33,8 @@ function disparar (){
         selectPlayer();
     })
 
-    
+    },1000)
 }
-
-
-
-
 
 
 function getPlayers() {
