@@ -5,6 +5,7 @@ let botonDisparo = document.getElementById("disparar")
 let canvasVictima = document.getElementById("victima")
 let canvasKillerCel = document.getElementById("killerCel")
 let canvasKiller = document.getElementById("killer")
+var ensayo = document.getElementsByClassName("over")
 
 let jugador_nombre = document.getElementById('jugador_nombre');
 
@@ -26,7 +27,8 @@ function disparar (){
     globalPlayers.splice(currentSelectedIndex, 1);//El metodo splice nos permite eliminar, añadir o reemplazar los elementos de un arreglo; le indicamos que elimine el primer elemento del currentSelectedIndex que equivale a los nombres de los jugadores de la lista.
     
     setTimeout(()=>{ //Este metodo nos permite llamar una función dado un determinado tiempo
-        Swal.fire({ title: `Jugador ${currentSelected.playerName} muerto`, background:"#AF1212", color:"white", confirmButtonColor:"black", showClass: { popup: 'animate__animated animate__fadeInDown' }, hideClass: { popup: 'animate__animated animate__fadeOutUp' } }).then(()=>{
+        Swal.fire({ 
+            title: 'Game Over', background:'url(/imagenes/fondo-rojo.jpeg)', imageUrl: '/imagenes/Squid-Game-PNG.png', text: `Jugador ${currentSelected.playerName} muerto`, color:'#fff',confirmButtonColor:"black", confirmButtonText: 'NEXT DEATH', showClass: { popup: 'over' }, hideClass: { popup: 'animate__animated animate__fadeOutUp' }}).then(()=>{
         canvasKillerCel.classList.remove("killerDisparandoCel")
         canvasVictima.classList.remove("muerto")
         canvasKiller.classList.remove("killerDisparando")
