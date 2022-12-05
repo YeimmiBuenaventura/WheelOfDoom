@@ -5,60 +5,65 @@ let botonDisparo = document.getElementById("disparar")
 let canvasVictima = document.getElementById("victima")
 let canvasKillerCel = document.getElementById("killerCel")
 let canvasKiller = document.getElementById("killer")
+var ensayo = document.getElementsByClassName("over")
 
 let jugador_nombre = document.getElementById('jugador_nombre');
 
-// Se creo un evento de click sobre el botón para que ejecutara la función de iniciar, la cual permitiría realizar los cambios en las animaciones. Entre ellos que mediante un keyframe el killer realizara la acción de disparar y respecto de la víctima que la animación inicial se detuviera y se m ostrara la última vista de la víctima que es ya muerto.
+// Se creo un evento de click sobre el botón para que ejecutara la función de iniciar, la cual permitiría realizar los cambios en las animaciones. Entre ellos que mediante un keyframe el killer realizara la acción de disparar y respecto de la víctima que la animación inicial se detuviera y se mostrara la última vista de la víctima que es ya muerto.
 botonDisparo.addEventListener("click", disparar);
 
+
 function disparar (){
-    canvasKillerCel.classList.add("killerDisparandoCel")
+    //Llamando estilos nuevos al ejecutar el addEventListener
+    canvasKillerCel.classList.add("killerDisparandoCel") 
     canvasVictima.classList.add("muerto")
     canvasKiller.classList.add("killerDisparando")
-
+    //Agregando el audio que corresponde al sonido del disparo, creando un nuevo elemento (document.createElement), agregando el mismo por medio del src. y llamandolo a ejecución por medio del play
     const audio = document.createElement("audio");
     audio.preload = "auto";
     audio.src= "sonidos/disparos.wav";
     audio.volume = 0.4;
     audio.play()  
-    globalPlayers.splice(currentSelectedIndex, 1);
+    globalPlayers.splice(currentSelectedIndex, 1);//El metodo splice nos permite eliminar, añadir o reemplazar los elementos de un arreglo; le indicamos que elimine el primer elemento del currentSelectedIndex que equivale a los nombres de los jugadores de la lista.
     
-    setTimeout(()=>{ 
-        Swal.fire({ title: `Jugador ${currentSelected.playerName} muerto`, background:"#AF1212", color:"white", confirmButtonColor:"black", showClass: { popup: 'animate__animated animate__fadeInDown' }, hideClass: { popup: 'animate__animated animate__fadeOutUp' } }).then(()=>{
+    setTimeout(()=>{ //Este metodo nos permite llamar una función dado un determinado tiempo
+        Swal.fire({ 
+            title: 'Game Over', background:'url(/imagenes/fondo-rojo.jpeg)', imageUrl: '/imagenes/Squid-Game-PNG.png', text: `Jugador ${currentSelected.playerName} muerto`, color:'#fff',confirmButtonColor:"black", confirmButtonText: 'NEXT DEATH', showClass: { popup: 'over' }, hideClass: { popup: 'animate__animated animate__fadeOutUp' }}).then(()=>{
         canvasKillerCel.classList.remove("killerDisparandoCel")
         canvasVictima.classList.remove("muerto")
         canvasKiller.classList.remove("killerDisparando")
 
-        
-        selectPlayer();
+
+        selectPlayer();//Esta función nos permite llevar el conteo de los jugadores que aun existen en el array
     })
 
     },1000)
 }
 
-
+//Esta función trae la lista de jugadores
 function getPlayers() {
-    const jugadores = JSON.parse(localStorage.getItem('playersKey'));
-    return jugadores;
+    const jugadores = JSON.parse(localStorage.getItem('playersKey')); //Asignamos la lista a una nueva variable jugadores que los extrae del localStorage
+    return jugadores; //Devuelve la lsita de jugadores
 }
 
-var globalPlayers = getPlayers();
-var currentSelected = {};
-var currentSelectedIndex = 0;
+var globalPlayers = getPlayers(); //Asignamos  la varibale globalPlayers la funcion getPlayers
+var currentSelected = {}; //Asignamos a la variable currentSelected un objeto
+var currentSelectedIndex = 0; //Inicializamos la variable currentSelectedIndex
 
+//Esta función nos permite verificar si el array esta vacio
 function selectPlayer() {
 
-    if(globalPlayers.length < 1 ) {
+    if(globalPlayers.length < 1 ) { //Se aplica este condicional indicando que si 1 es mayor al largo de la lista globalPlayers aperturara la ventana correspondiente a gameOver.html
         window.location.href = "/gameOver.html";
     }
 
-    const players = globalPlayers;
-    const randomIndex = Math.floor(Math.random() * (players.length));
-    const selectedPlayer = players[randomIndex];
-    currentSelectedIndex = randomIndex;
-    currentSelected = selectedPlayer;
-    jugador_nombre.innerHTML = selectedPlayer.playerName;
+    const players = globalPlayers; //Asignamos a la variable player la lista de jugadores
+    const randomIndex = Math.floor(Math.random() * (players.length)); //Asignamos a la variable randomIndex, le indicamos que devuelva el maximo entero(Math.floor) de la extraccion aleatoria (Math.random) del la lista players.
+    const selectedPlayer = players[randomIndex]; //Asignamos una variable que corresponde al jugador proveniente del random ejecutado
+    currentSelectedIndex = randomIndex; //Reasignamos valores a currentSelectedIndex
+    currentSelected = selectedPlayer; //Agregamos el objeto a la varible currentSelected
+    jugador_nombre.innerHTML = selectedPlayer.playerName;//Reasignamos los valores de jugador_nombre
     return selectedPlayer;
 }
 
-selectPlayer();
+selectPlayer(); //Llamamos a ejecución la función

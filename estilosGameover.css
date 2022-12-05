@@ -10,10 +10,12 @@
 }
 html{
     background-image: url('./imagenes/fondo-rojo.jpeg');
-    overflow:visible;
+    overflow:hidden;
     width: 100vw;
     height: 100vh;
 }
+/*RESPONSIVE COMPU*/
+@media (min-width:1024px) {
 body{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -26,96 +28,221 @@ body{
 }
 .gameOver{
     grid-area: 1 / 1 / 2 / 2;
-    font-size: 3.5rem;
+    font-size: 3em;
     justify-self: flex-end;
     color: #fff;
     align-self: flex-end;
+    padding-right: 5%;
 }
-.squid{
+.squid1{
     grid-area: 2 / 1 / 3 / 2;
     width: 70%;
     justify-self: flex-end;
-    padding-right: 5%;
+    padding-left: 5%;
 }
 .text{
     grid-area: 3 / 1 / 4 / 2;
-    font-size: 1.8rem;
+    width: 60%;
+    font-size: 1.5em;
     justify-self: flex-end;
-    padding-left: 25%;
     text-align: center;
     color: #fff;
 }
 .cook{
     grid-area: 1 / 2 / 4 / 3;
-    width: 20%;
+    background-image: url('./imagenes/reset.png');
+    background-size: 150px 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;    
     justify-self: center;
     align-self: center;
 }
 .cook:hover{
-    scale: 150%;
+    scale: 110%;
     cursor: pointer;
 }
 .reset{
-    grid-area: 1 / 2 / 4 / 3;
-    justify-self: center;
+    grid-area: 2 / 2 / 3 / 3;
+    text-align: center;
+    font-size: 1.7em;
     align-self: center;
-    font-size: 1.7rem;
 }
-@media (max-height: 480px) and (min-width: 320px){
+}
+/*RESPONSIVE CELULAR VERTICAL*/
+@media (min-width: 320px) and (max-width: 480px){
     body{
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         grid-template-columns: repeat(autofill, minmax(320px, 1fr));
         grid-template-columns: repeat(autofit, minmax(320px, 1fr));
         grid-template-rows: repeat(4, auto);
-        grid-template-rows: repeat(autofill, minmax(160px, 1fr));
-        grid-template-rows: repeat(autofit, minmax(160px, 1fr));
+        grid-template-rows: repeat(autofill, minmax(90px, 1fr));
+        grid-template-rows: repeat(autofit, minmax(90px, 1fr));
         height: 100vh;
     }
     .gameOver{
         grid-area: 1 / 1 / 2 / 2;
-        font-size: 2.5rem;
+        font-size: 2em;
         justify-self: center;
         color: #fff;
         align-self: center;
+        margin-top: 5%;
     }
-    .squid{
+    .squid1{
         grid-area: 2 / 1 / 3 / 2;
-        width: 80%;
+        width: 60%;
         justify-self: center;
-        padding-right: 5%;
     }
     .text{
         grid-area: 3 / 1 / 4 / 2;
-        font-size: 1.3rem;
+        font-size: 1em;
         justify-self: center;
         text-align: center;
         color: #fff;
-        padding: 0;
+        margin-top: -10%;
+        margin-bottom: -20%;
     }
     .cook{ 
         grid-area: 4 / 1 / 5 / 2;
         background-image: url('./imagenes/reset.png');
-        background-size: 100px 100px;
-        width: 100px;
-        height: 100px;
+        background-size: 80px 80px;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 100%;  
         justify-self: center;
+        margin-bottom: 20%;
     }
     .cook:hover{
-        scale: 150%;
+        scale: 110%;
         cursor: pointer;
     }
     .reset{
         grid-area: 4 / 1 / 5 / 2;
-        justify-self: center;
-        font-size: 1.3rem;
         text-align: center;
-    }
-    .reset:hover{
-        scale: 150%;
+        font-size: 1em;
+        align-self: center;
     }
 }
-@media (min-width: 480px) and (min-height: 320px){
+/*CELULAR HORIZONTAL*/
+@media (min-width:399px) and (max-width:760px) and ( orientation:landscape){
+    body{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(autofill, minmax(160px, 1fr));
+        grid-template-columns: repeat(autofit, minmax(160px, 1fr));
+        grid-template-rows: repeat(3, auto);
+        grid-template-rows: repeat(autofill, minmax(160px, 1fr));
+        grid-template-rows: repeat(autofit, minmax(160px, 1fr));
+        height: 100vh;
+        padding: 2%;
+    }
+    .gameOver{
+        grid-area: 1 / 1 / 2 / 2;
+        font-size: 2rem;
+        justify-self: center;
+        color: #fff;
+        align-self: flex-end;
+
+    }
+    .squid1{
+        grid-area: 1 / 2 / 3 / 3;
+        width: 90%;
+        justify-self: center;
+        margin-top: 10%;
+    }
+    .text{
+        grid-area: 3 / 2 / 4 / 3;
+        font-size: 1rem;
+        justify-self: flex-end;
+        text-align: center;
+        color: #fff;
+        padding: 0;
+        margin-top: -15%;
+    }
+    .cook{
+        grid-area: 2 / 1 / 4 / 2;
+        background-image: url('./imagenes/reset.png');
+        background-size: 100px 100px;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 100%;  
+        justify-self: center;
+        align-self: center;
+        margin-top: 20%;
+    }
+    .cook:hover{
+        scale: 110%;
+        cursor: pointer;
+    }
+    .reset{
+        grid-area: 2 / 1 / 4 / 2;
+        text-align: center;
+        font-size: 1em;
+        align-self: center;
+    }
+}
+/*TABLET VERTICAL*/
+@media (min-width:481px) and (max-width:768px){
+    body{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(autofill, minmax(481px, 1fr));
+        grid-template-columns: repeat(autofit, minmax(481px, 1fr));
+        grid-template-rows: repeat(4, auto);
+        grid-template-rows: repeat(autofill, minmax(110px, 1fr));
+        grid-template-rows: repeat(autofit, minmax(110px, 1fr));
+        height: 96vh;
+    }
+    .gameOver{
+        grid-area: 1 / 1 / 2 / 2;
+        font-size: 3em;
+        justify-self: center;
+        color: #fff;
+        align-self: center;
+        margin-top: 10%;
+    }
+    .squid1{
+        grid-area: 2 / 1 / 3 / 2;
+        width: 55%;
+        justify-self: center;
+        margin-bottom: -2%;
+    }
+    .text{
+        grid-area: 3 / 1 / 4 / 2;
+        font-size: 1.8em;
+        width: 55%;
+        justify-self: center;
+        text-align: center;
+        color: #fff;
+    }
+    .cook{ 
+        grid-area: 4 / 1 / 5 / 2;
+        background-image: url('./imagenes/reset.png');
+        background-size: 130px 130px;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 100%;  
+        justify-self: center;
+        margin-bottom: 15%;
+    }
+    .cook:hover{
+        scale: 110%;
+        cursor: pointer;
+    }
+    .reset{
+        grid-area: 4 / 1 / 5 / 2;
+        text-align: center;
+        font-size: 1.5em;
+        align-self: center;
+    }
+}
+/* RESPONSIVE TABLET HORIZONTAL*/
+@media (min-width:769px) and (max-width:1022px) and (orientation:landscape){
     body{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -134,12 +261,11 @@ body{
         align-self: flex-end;
         padding-top: 20%;
     }
-    .squid{
+    .squid1{
         grid-area: 1 / 2 / 3 / 3;
         width: 90%;
         justify-self: center;
         align-self: flex-end;
-
     }
     .text{
         grid-area: 3 / 2 / 4 / 3;
@@ -151,18 +277,29 @@ body{
     }
     .cook{
         grid-area: 2 / 1 / 4 / 2;
-        width: 30%;
+        background-image: url('./imagenes/reset.png');
+        background-size: 150px 150px;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 100%;  
         justify-self: center;
         align-self: center;
     }
     .cook:hover{
-        scale: 150%;
+        scale: 110%;
         cursor: pointer;
     }
     .reset{
         grid-area: 2 / 1 / 4 / 2;
-        justify-self: center;
+        text-align: center;
+        font-size: 1.7em;
         align-self: center;
-        font-size: 0.8rem;
     }
 }
+
+
+
+
+
+

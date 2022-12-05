@@ -1,0 +1,84 @@
+@font-face {
+    font-family: TrueType;
+    src: url('fuente/Game-Of-Squids.ttf');
+}
+*{
+    font-family: TrueType;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    overflow:hidden;
+    width: 100vw;
+    height: 100vh;
+}
+.popUp{
+    background-image: url('./imagenes/fondo-rojo.jpeg') !important;
+    display: grid !important;
+    grid-template-columns: repeat(1, 1fr) !important;
+    grid-template-columns: repeat(autfill, minmax(380px, 1fr)) !important;
+    grid-template-columns: repeat(autfit, minmax(380px, 1fr)) !important;
+    grid-template-rows: repeat(4, auto) !important;
+    grid-template-rows: repeat(autfill, minmax(80px, 1fr)) !important;
+    grid-template-rows: repeat(autfit, minmax(80px, 1fr)) !important;
+    margin: 0;
+    padding: 1%;
+    border-radius: 2%;
+    box-shadow: 0px 0px 0px 5px #00000044;
+    width: 38%;
+}    
+.gameOver{
+    grid-area: 1 / 1 /  2 / 2;
+    font-size: 3em;
+    text-align: center;
+    color: #fff;
+}
+.squid{
+    grid-area:  2 / 1 / 3 / 2;
+    width: 30%;
+    justify-self: center;
+}
+.more{
+    grid-area:  3 / 1 / 4 / 2;
+    text-align: center;
+    color: #fff;
+    font-size: 1em;
+    margin-top: 2%;
+}
+.next{
+    grid-area: 4 / 1 / 5 / 2;
+    width: 20%;
+    justify-self: center;
+    margin-top: 5%;
+    color: #fff;
+    border: 3px solid #AF1212;
+    background-image: -webkit-linear-gradient(30deg, #AF1212 50%, transparent 50%);
+    background-image: linear-gradient(30deg, #AF1212 50%, transparent 50%);
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    -webkit-transition: background 300ms ease-in-out;
+    transition: background 300ms ease-in-out;
+    border-radius: 5px;
+    box-shadow: 0px 0px 0px 5px #00000044;
+}
+.next:hover{
+    background-position: 100%;
+    color: #AF1212;
+}
+.over{
+    background-color: #00000080 !important;
+    position: fixed !important; /*Abarca toda la pantalla*/
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    display: flex !important;
+    align-items: center!important;
+    justify-content: center!important;
+    visibility: hidden !important;
+}
+.over.active{
+    visibility: visible !important;
+}
